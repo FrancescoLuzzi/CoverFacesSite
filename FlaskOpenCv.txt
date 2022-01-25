@@ -1,0 +1,16 @@
+Usare come base il progetto della tesi per creare un sito con front-end in html e python, usando i template forniti da flask.
+https://flask.palletsprojects.com/en/2.0.x/tutorial/templates/
+https://pythonhow.com/python-tutorial/flask/Adding-CSS-styling-to-your-website/
+
+Studiare come:
+    -Mandare un'immagine senza salvarla sul server (base64 encoding and decoding) e file_name -> run simulation -> cv.imwrite(f"OUT{file_name}") -> flask.send_file(f"OUT{file_name}")
+    -Mandare un video senza salvarlo sul server(base64 encoding and decoding) e file_name -> PER TUTTO IL VIDEO{run simulation -> cv.imwrite(f"OUT{file_name}")} -> flask.send_file(f"OUT{file_name}") 
+        {GESTIRE IL CASO IN CUI I FILE SIANO MOLTO GRANDI} 
+        https://stackoverflow.com/questions/24318084/flask-make-response-with-large-files
+
+        https://flask.palletsprojects.com/en/2.0.x/api/?highlight=send%20image#response-objects 
+        MIMETYPE:
+            -videos https://help.encoding.com/knowledge-base/article/correct-mime-types-for-serving-video-files/
+            -images and videos https://www.thoughtco.com/mime-types-by-content-type-3469108
+            -images and videos https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/MIME_types/Common_types
+    -Rimuovere file generato in output.
