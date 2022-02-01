@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>{{title}}</title>
+		<link
+			rel="stylesheet"
+			type="text/css"
+			href="{{ url_for('static',filename='style/basePage.css') }}"
+		/>
+	</head>
+	<body>
+		<form
+			action="/facedetection"
+			method="POST"
+			enctype="multipart/form-data"
+		>
+			<label for="media">Input your file here</label>
+			<input
+				type="file"
+				name="file"
+				id="media"
+				class="fico"
+				accept="image/*, video/*"
+			/>
+			<input type="submit" value="Cover your face!" />
+		</form>
+	</body>
+</html>

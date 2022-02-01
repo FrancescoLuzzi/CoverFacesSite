@@ -1,10 +1,17 @@
 import os
+import cv2 as cv
+import numpy as np
+from flask import Flask, render_template, request, make_response
 
-from flask import Flask
+from flaskr.flask_cv_factories import factories
+
+model_factory = factories.modelFactory()
+painter_factory = factories.painterFactory()
 
 
 def create_app(test_config=None):
     # create and configure the app
+
     app = Flask(__name__, instance_relative_config=True)
 
     if test_config is None:
@@ -21,8 +28,8 @@ def create_app(test_config=None):
         pass
 
     # a simple page that says hello
-    @app.route("/hello")
+    @app.route("/")
     def hello():
-        return "Hello, World!"
+        return render_template("basePage.html", title="FaceUnderCover")
 
     return app
