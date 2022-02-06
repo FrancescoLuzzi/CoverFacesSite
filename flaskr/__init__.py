@@ -56,9 +56,9 @@ def create_app(test_config=None):
         painter = painter_factory.aquire_painter()
 
         file = request.files["file"]
-
+        response = "OKOK"
         if "image" in file.mimetype:
-            return process_image(file, painter, model)
+            response = process_image(file, painter, model)
         elif "video" in file.mimetype:
             print("Video")
         else:
@@ -67,6 +67,6 @@ def create_app(test_config=None):
         model_factory.release_model(model)
         painter_factory.release_painter(painter)
 
-        return "OKOK"
+        return response
 
     return app
